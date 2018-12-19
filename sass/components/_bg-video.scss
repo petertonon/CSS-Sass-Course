@@ -1,0 +1,20 @@
+.bg-video {
+  position: absolute;
+  // need to set the container (section.stories) postion relative
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: .25;
+  // this makes sure the outside of the video is not being shown
+  overflow: hidden;
+
+  &__content {
+    height: 100%;
+    width: 100%;
+    // this will make sure the element fills the parent while keeping its aspect ratio!
+    // the parts that don't fit will simply be clipped off :)
+    object-fit: cover;
+  }
+}
