@@ -15,9 +15,40 @@ html {
   // this defines what 1 rem is
   font-size: 62.5%;
   /* we did 10 px (our set) divided by 16 pixels (standard set) */
+
+//dont need both media querries of 50% font size because the larger media querrie users
+//everything below that indicated size
+
+  // @include respond(phone)  {
+  //   font-size: 50%;
+  // }
+
+//always put the larger media querry before the smaller one so the smaller one applies second (read in cascade)
+  @include respond(tab-land)  { //is width less than 1200?
+    font-size: 56.25%;  //1rem = 9px; 9/16px = 56.25%
+  }
+
+  @include respond(tab-port)  { //is width less than 900?
+    font-size: 50%;  //1rem = 8px; 8/16px = 50%
+  }
+
+
+  @include respond(big-desktop)  {
+    font-size: 75%;  //1rem = 12px; 12/16px = 75%
+  }
 }
 
 body {
   box-sizing: border-box;
   /* this will be set to all elements */
+  padding: 3rem;
+
+  @include respond(tab-port)  { //is width less than 900?
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $color-primary;
+  color: white;
 }

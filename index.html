@@ -6,7 +6,7 @@
 
         <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
 
-        <link rel="stylesheet" href="css/icon-font.css">
+        <!-- <link rel="stylesheet" href="css/icon-font.css"> -->
         <link rel="stylesheet" href="css/styles.css">
         <link rel="shortcut icon" type="image/png" href="img/favicon.png">
 
@@ -14,9 +14,11 @@
     </head>
     <body>
 
-<!--       <div class="navigation">
-        <input type="text" class="navigation__checkbox" id="navi-toggle">
-        <label for="navi-toggle" class="navigation__button">MENU</label>
+      <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+        <label for="navi-toggle" class="navigation__button">
+          <span class="navigation__icon">&nbsp;</span>
+        </label>
 
         <div class="navigation__background">&nbsp;</div>
 
@@ -29,7 +31,7 @@
             <li class="navigation__item"><a href="" class="navigation__link">Book Now</a></li>
           </ul>
         </nav>
-      </div> -->
+      </div>
 
 
 
@@ -76,9 +78,28 @@
 
               <div class="col-1-of-2">
                 <div class="composition">
+
+                  <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                    alt="Photo 1"
+                    src="img/nat-1-large.jpg"
+                    class="composition__photo composition__photo--p1">
+                  <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                    alt="Photo 2"
+                    src="img/nat-2-large.jpg"
+                    class="composition__photo composition__photo--p2">
+                  <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                    sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                    alt="Photo 3"
+                    src="img/nat-3-large.jpg"
+                    class="composition__photo composition__photo--p3">
+
+                    <!--
                   <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
                   <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
                   <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                -->
                 </div>
               </div>
 
@@ -130,7 +151,7 @@
             </div>
           </section>
 
-          <section class="section-tours">
+          <section class="section-tours" id="section-tours">
             <div class="u-center-text u-margin-bottom-big">
               <h2 class="heading-secondary">Most Popular Tours</h2>
             </div>
@@ -163,7 +184,7 @@
                         <p class="card__price-only">Only</p>
                         <p class="card__price-value">$297</p>
                       </div>
-                      <a href="#" class="btn btn--white">Book Now</a>
+                      <a href="#popup" class="btn btn--white">Book Now</a>
                     </div>
                   </div>
                 </div>
@@ -195,7 +216,7 @@
                         <p class="card__price-only">Only</p>
                         <p class="card__price-value">$497</p>
                       </div>
-                      <a href="#" class="btn btn--white">Book Now</a>
+                      <a href="#popup" class="btn btn--white">Book Now</a>
                     </div>
                   </div>
                 </div>
@@ -227,7 +248,7 @@
                         <p class="card__price-only">Only</p>
                         <p class="card__price-value">$897</p>
                       </div>
-                      <a href="#" class="btn btn--white">Book Now</a>
+                      <a href="#popup" class="btn btn--white">Book Now</a>
                     </div>
                   </div>
                 </div>
@@ -342,7 +363,13 @@
 
         <footer class="footer">
           <div class="footer__logo-box">
-            <img src="img/logo-green-2x.png" alt="Natours Logo" class="footer__logo">
+<!-- below is art diretion img optimizing -->
+            <picture class="footer__logo">
+              <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x," alt="Natours Logo" class="footer__logo" src="img/logo-green-2x.png">
+            </picture>
+
+
           </div>
           <div class="row">
             <div class="col-1-of-2">
@@ -363,6 +390,23 @@
             </div>
           </div>
         </footer>
+
+        <div class="popup" id="popup">
+          <div class="popup__content">
+            <div class="popup__left">
+              <img src="img/nat-8.jpg" alt="Tour Photo" class="popup__img">
+              <img src="img/nat-9.jpg" alt="Tour Photo" class="popup__img">
+            </div>
+              <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>
+                <h2 class="heading-secondary u-margin-bottom-medium">Start Booking Now</h2>
+                <h3 class="heading-tertiary u-margin-bottom-small">Importnt &ndash; Please read these terms before booking</h3>
+                <p class="popup__text">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </p>
+                <a href="#" class="btn btn--green">Book Now</a>
+          </div>
+        </div>
 
 <!--
         <section class="grid-test">
